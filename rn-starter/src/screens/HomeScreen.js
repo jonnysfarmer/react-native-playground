@@ -1,10 +1,20 @@
 import React from "react"
-import { Text, StyleSheet } from "react-native"
-import { red } from "color-name";
+import { Text, StyleSheet, View, Button, TouchableOpacity } from "react-native"
 
 const HomeScreen = () => {
-  return <Text style={styles.text}>Hello World</Text>
-};
+  return (
+    <View>
+      <Text style={styles.text}>Hello World</Text>
+      <Button 
+        title='Go to Component Demo' 
+        onPress={()=> console.log('button press')}
+      />
+      <TouchableOpacity onPress={()=>console.log('Button 2 Pressed')}>
+        <Text>Go to List Demo</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
   text: {
@@ -12,6 +22,6 @@ const styles = StyleSheet.create({
     color: 'red'
 
   }
-});
+})
 
 export default HomeScreen
