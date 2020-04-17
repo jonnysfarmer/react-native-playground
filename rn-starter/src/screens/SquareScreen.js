@@ -8,7 +8,7 @@ const COLOR_INCREMENT = 10
 const reducer = (state, action) => {
   // state === { red: number, green: number, blue: number}
   // action === { type: 'change_red' || 'change_green' || 'change_blue',  payload: -15 || +15 }
-  // This is basically convension.  Always have Type and Payload.
+  // This is basically convension.  Action === { type : , payload: }
 
   switch (action.type) {
     case 'change_red':
