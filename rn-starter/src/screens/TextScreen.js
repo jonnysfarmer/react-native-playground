@@ -1,7 +1,11 @@
-import React, { useReducer } from 'react'
-import { View, Text, StyleSheet, TextInput} from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, StyleSheet, TextInput } from 'react-native'
+
+// Similar to ReactJS, need to have onChangeText value to store the value
+// you can also add a conditional statement as well
 
 const TextScreen = () => {
+  const [name, setName] = useState('')
 
   return (
     <View>
@@ -11,8 +15,11 @@ const TextScreen = () => {
         autoCapitalize='none' 
         autoCorrect={false}
         // autoCorrect and AutoCapitlize are import for IOS.  Important for Usernames / Emails / Passwords etc
-        value='hi There'
+        value={name}
+        onChangeText={(newValue) => setName(newValue)}
       />
+      <Text>My name is {name}</Text>
+      {name.length > 5 ? <Text>Longer than 5</Text> : <Text>Shorter than 5</Text> }
     </View>
   )
 }
