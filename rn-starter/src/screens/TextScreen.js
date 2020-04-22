@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 
-// Similar to ReactJS, need to have onChangeText value to store the value
 // you can also add a conditional statement as well
+// good that this is similar to ReactJS interms of State - but onChangeText opposed to onChange
 
 const TextScreen = () => {
   const [name, setName] = useState('')
