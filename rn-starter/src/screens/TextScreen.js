@@ -29,7 +29,11 @@ const styles = StyleSheet.create({
     margin: 15,
     borderColor: 'black',
     borderWidth: 1
+    // ...StyleSheet.absoluteFillObject
+    // This means the object fills its whole parent box
   }
 })
+
+// 
 
 export default TextScreen
