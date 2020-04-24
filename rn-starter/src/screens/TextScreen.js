@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, TextInput } from 'react-native'
-
+// Style sorted
 // you can also add a conditional statement as well
 // good that this is similar to ReactJS interms of State - but onChangeText opposed to onChange
 
