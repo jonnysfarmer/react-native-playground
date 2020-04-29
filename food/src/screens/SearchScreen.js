@@ -19,7 +19,7 @@ const SearchScreen = () => {
 
 
   return (
-    <View>
+    <>
       <SearchBar
         term={term}
         onTermChange={newTerm => setTerm(newTerm)}
@@ -27,11 +27,11 @@ const SearchScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <ResultsList title='Cost Effective' results={filterResultsByPrice('£')} />
-        <ResultsList title='Bit Pricier' results={filterResultsByPrice('££')} />
-        <ResultsList title='Big Spender' results={filterResultsByPrice('£££')} />
+        <ResultsList title='£' results={filterResultsByPrice('£')} />
+        <ResultsList title='££' results={filterResultsByPrice('££')} />
+        <ResultsList title='£££' results={filterResultsByPrice('£££')} />
       </ScrollView>
-    </View>
+    </>
 
   )
 }
