@@ -23,7 +23,7 @@ export default () => {
   }
 
   useEffect(()=> {
-    searchApi('brixton')
+    searchApi('covent garden')
   }, [])
 
   return [searchApi, results, errorMessage]
