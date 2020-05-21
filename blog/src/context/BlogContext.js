@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-
-// This is our default export as this is how we get the data
-const BlogContext = React.createContext()
+import createDataContext from './createDataContext'
 
 
-// This is what wraps the app.  the App in App.js is the {children} which is a prop
-export const BlogProvider = ({ children }) => {
-
-  const [blogPosts, setBlogPosts] = useState([])
-
-  const addBlogPost = () => {
-    setBlogPosts([...blogPosts, { title: `Blog Post ${blogPosts.length + 1}` } ])
+const blogReducer = (state, action) => {
+  switch (action.type){
+    case 'add_blogpost':
+      return [...state, { title: `Blog post Number ${state.length + 1}` }]
+    default:
+      return state
   }
 
-  return (
-    <BlogContext.Provider value={{ data: blogPosts, addBlogPost: addBlogPost }}>
-      {children}
-    </BlogContext.Provider>
-  )
 }
 
-export default BlogContext
+// We need to do with this, so each of the functions are called with the dispatch function
+// in createDataContext
+const addBlogPost = (dispatch) => {
+  return () => {
+    dispatch({ type: 'add_blogpost' })
+  }
+} 
+
+
+export const { Context, Provider } = createDataContext(blogReducer, { addBlogPost }, [])
