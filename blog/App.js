@@ -3,11 +3,13 @@ import { createStackNavigator } from 'react-navigation-stack'
 import React from 'react'
 
 import IndexScreen from './src/screens/IndexScreen'
+import ShowScreen from './src/screens/ShowScreen'
 import { Provider as BlogProvider } from './src/context/BlogContext'
 
 const navigator = createStackNavigator(
   {
-    Index: IndexScreen
+    Index: IndexScreen,
+    Show: ShowScreen
   },
   {
     initialRouteName: 'Index',
