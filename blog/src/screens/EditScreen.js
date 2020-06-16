@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import { Context } from '../context/BlogContext'
 import BlogPostForm from '../components/BlogPostForm'
 
-const EditScreen = ( { navigation }) => {
+const EditScreen = ({ navigation }) => {
 
   const { state } = useContext(Context)
 
@@ -12,7 +12,10 @@ const EditScreen = ( { navigation }) => {
 
 
   return (
-   <BlogPostForm />
+    <BlogPostForm 
+      onSubmit={(title, content)=> console.log(title)}
+      initialValues={{ title: blogPost.title, content: blogPost.content }}
+    />
   )
 }
 
