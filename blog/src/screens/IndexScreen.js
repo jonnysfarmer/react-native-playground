@@ -1,15 +1,14 @@
 import React, { useContext } from 'react'
-import { Text, View, StyleSheet, FlatList, Button, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, FlatList, TouchableOpacity } from 'react-native'
 import { Context } from '../context/BlogContext'
 import { Feather } from '@expo/vector-icons'
 
 const IndexScreen = ({ navigation }) => {
   // we use useContext to get the value prop from Context
-  const { state, addBlogPost, deleteBlogPost } = useContext(Context)
+  const { state, deleteBlogPost } = useContext(Context)
 
   return (
     <View>
-      <Button title='Add Post' onPress={addBlogPost} />
       <FlatList
         data={state}
         keyExtractor={(blogPosts) => blogPosts.title}

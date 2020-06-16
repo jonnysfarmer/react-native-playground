@@ -16,8 +16,9 @@ const blogReducer = (state, action) => {
 // We need to do with this, so each of the functions are called with the dispatch function
 // in createDataContext
 const addBlogPost = (dispatch) => {
-  return (title, content) => {
+  return (title, content, callback) => {
     dispatch({ type: 'add_blogpost', payload: { title: title, content: content } })
+    callback()
   }
 } 
 const deleteBlogPost = (dispatch)=> {
